@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="script.js"></script>
+    <title>Bundesliga</title>
+</head>
+<body>
+<div class="players">
+    <form class="content" method="get" action="players">
+        <label for="verein">Please choose a club</label>
+            <select id="verein" name="verein">
+                {{#each clubs}}
+                    <option value="{{V_ID}}" {{selected}}>{{Name}}</option>
+                {{/each}}
+            </select>
+        <br />
+        <input type="submit" value="Show Players">
+        <table class="player">
+            <tr>
+                <th>Name</th>
+                <th>Player-Number</th>
+            </tr>
+            {{#each player}}
+                <tr>
+                    <td>{{Spieler_Name}}</td>
+                    <td>{{Trikot_Nr}}</td>
+                </tr>
+            {{/each}}
+        </table>
+
+    </form>
+</div>
+</body>
+</html>
